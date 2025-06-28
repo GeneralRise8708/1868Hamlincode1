@@ -220,7 +220,7 @@ campaignTrail_temp.questions_json = [
         "pk": 192,
         "fields": {
             "priority": 1,
-            "description": "Some of your campaign advisors want you to try to get the Supreme Court Chief Justice, Salmon P. Chase to endorse you. You are scheduled to meet him in September. \n",
+            "description": "Some of your campaign advisors want you to try to get Supreme Court Chief Justice, Salmon P. Chase to endorse you. You are scheduled to meet him in September. \n",
             "likelihood": 1
         }
     },
@@ -1174,8 +1174,8 @@ campaignTrail_temp.states_json = [
             "name": "Louisiana",
             "abbr": "LA",
             "electoral_votes": 7,
-            "popular_votes": 113488,
-            "poll_closing_time": 180,
+            "popular_votes": 10,
+            "poll_closing_time": 0,
             "winner_take_all_flg": 1,
             "election": 5
         }
@@ -1382,8 +1382,8 @@ campaignTrail_temp.states_json = [
             "name": "Tennessee",
             "abbr": "TN",
             "electoral_votes": 12,
-            "popular_votes": 82757,
-            "poll_closing_time": 120,
+            "popular_votes": 10,
+            "poll_closing_time": 0,
             "winner_take_all_flg": 1,
             "election": 5
         }
@@ -4106,7 +4106,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2615,
             "candidate": 20,
             "affected_candidate": 20,
-            "global_multiplier": 0.001
+            "global_multiplier": -0.01
         }
     },
     {
@@ -4116,7 +4116,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2616,
             "candidate": 20,
             "affected_candidate": 20,
-            "global_multiplier": 0.001
+            "global_multiplier": -0.01
         }
     },
     {
@@ -4126,7 +4126,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2617,
             "candidate": 20,
             "affected_candidate": 20,
-            "global_multiplier": 0.001
+            "global_multiplier": -0.01
         }
     },
     {
@@ -4136,7 +4136,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2618,
             "candidate": 20,
             "affected_candidate": 20,
-            "global_multiplier": 0.001
+            "global_multiplier": -0.01
         }
     },
     {
@@ -5255,7 +5255,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 79,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.03
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5266,7 +5266,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 78,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.02
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5277,7 +5277,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 78,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.02
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5288,7 +5288,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 79,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.03
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5299,7 +5299,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 78,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.02
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5310,7 +5310,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 79,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.03
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5321,7 +5321,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 78,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.02
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5332,7 +5332,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 79,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": -0.03
+            "state_multiplier": -0.05
         }
     },
     {
@@ -5908,7 +5908,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 1415,
             "candidate": 20,
-            "answer_feedback": "This was the expected response and will help you significantly in Tennessee this election. \n"
+            "answer_feedback": "This was the expected response, but Tennessee's Legislature is voting in this election, and they are planning on voting for Seymour. \n"
         }
     },
     {
@@ -6574,7 +6574,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2765,
             "candidate": 20,
-            "answer_feedback": "Tennessee is already most likely to vote for you, and Louisiana is most likely to vote for Seymour. Thus, this visit could not accomplish much.\n"
+            "answer_feedback": "Tennessee and Louisiana's state legislatures are voting in this election, and they both are supporting Seymour. So this trip was useless. \n"
         }
     },
     {
@@ -6656,6 +6656,37 @@ campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/yVOxPyA.png";
 campaignTrail_temp.candidate_last_name = "Hamlin";
 campaignTrail_temp.running_mate_last_name = "Grant";
 
+campaignTrail_temp.multiple_endings = true;
+endingPicker = (out, totv, aa, quickstats) => {
+
+    function setImage(url) {
+        if(url == '' || url == null) return;
+        let interval = setInterval(function () {
+            img = document.getElementsByClassName("person_image")[0];
+            if (img != null) {
+                img.src = url;
+                clearInterval(interval);
+            }
+        }, 50);
+    }
+
+    if(quickstats[0] > 128) {
+        setImage("");
+        return `<p>This was expected. Everyone knew you were going to win, 2 days before the election. Newspapers were already coming out predicting a Hamlin victory. Now with four more years, you are left with the responsibilities of keeping and peace and admitting more southern states. Good Luck on your first elected term, Mr. Hamlin.</p> `;
+    }
+    if(quickstats[0] == 128) {
+        setImage("");
+        return `<p>How? No one knows how this happened? But the election has been deadlocked. Now, for the first time since 1824, the House will have to choose the winner. But thankfully for you, the House and Senate are both in Republican hold. This means there is a good chance you will be elected. But until then, do not let it get to you. Good Luck, Mr. Hamlin.</p>`;
+    }
+    if(quickstats[0] < 128) {
+        setImage("");
+        return `<p>How did this happen? Everyone thought you were going to win, but you proved them wrong. Now, President Seymour serving is going to be interesting. But as for you, you could return for a second try in 4 years or go back to Maine and retire. But whatever you do is something only time will tell.</p>  `;
+    }
+    if(quickstats[0] > 256) {
+        setImage("");
+        return `<p>Not even possible.</p>`;
+    }
+}
 
 
 campaignTrail_temp.jet_data = [{
@@ -6674,8 +6705,45 @@ campaignTrail_temp.jet_data = [{
     "cyoa_data": {},
     "mapping_enabled": false,
     "mapping_data": {},
-    "endings_enabled": false,
-    "ending_data": {}
+    "endings_enabled": true,
+    "ending_data": {
+        "1751152961410": {
+            "id": 1751152961410,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<p>This was expected. Everyone knew you were going to win, 2 days before the election. Newspapers were already coming out predicting a Hamlin victory. Now with four more years, you are left with the responsibilities of keeping and peace and admitting more southern states. Good Luck on your first elected term, Mr. Hamlin.</p> ",
+            "amount": "128"
+        },
+        "1751153684490": {
+            "id": 1751153684490,
+            "variable": 0,
+            "operator": "==",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<p>How? No one knows how this happened? But the election has been deadlocked. Now, for the first time since 1824, the House will have to choose the winner. But thankfully for you, the House and Senate are both in Republican hold. This means there is a good chance you will be elected. But until then, do not let it get to you. Good Luck, Mr. Hamlin.</p>",
+            "amount": "128"
+        },
+        "1751153685416": {
+            "id": 1751153685416,
+            "variable": 0,
+            "operator": "<",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<p>How did this happen? Everyone thought you were going to win, but you proved them wrong. Now, President Seymour serving is going to be interesting. But as for you, you could return for a second try in 4 years or go back to Maine and retire. But whatever you do is something only time will tell.</p>  ",
+            "amount": "128"
+        },
+        "1751154049131": {
+            "id": 1751154049131,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<p>Not even possible.</p>",
+            "amount": "256"
+        }
+    }
 }
 ]
 
