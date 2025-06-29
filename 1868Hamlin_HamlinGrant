@@ -3170,7 +3170,7 @@ campaignTrail_temp.candidate_state_multiplier_json = [
         "fields": {
             "candidate": 20,
             "state": 66,
-            "state_multiplier": 7
+            "state_multiplier": 0
         }
     },
     {
@@ -3314,7 +3314,7 @@ campaignTrail_temp.candidate_state_multiplier_json = [
         "fields": {
             "candidate": 20,
             "state": 88,
-            "state_multiplier": 1
+            "state_multiplier": 0
         }
     },
     {
@@ -3422,7 +3422,7 @@ campaignTrail_temp.candidate_state_multiplier_json = [
         "fields": {
             "candidate": 21,
             "state": 66,
-            "state_multiplier": 0.5
+            "state_multiplier": 8
         }
     },
     {
@@ -4985,28 +4985,6 @@ campaignTrail_temp.answer_score_state_json = [
     },
     {
         "model": "campaign_trail.answer_score_state",
-        "pk": 2527,
-        "fields": {
-            "answer": 1472,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2528,
-        "fields": {
-            "answer": 1472,
-            "state": 88,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
         "pk": 2537,
         "fields": {
             "answer": 1415,
@@ -5084,17 +5062,6 @@ campaignTrail_temp.answer_score_state_json = [
     },
     {
         "model": "campaign_trail.answer_score_state",
-        "pk": 2558,
-        "fields": {
-            "answer": 2555,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
         "pk": 2559,
         "fields": {
             "answer": 2555,
@@ -5102,17 +5069,6 @@ campaignTrail_temp.answer_score_state_json = [
             "candidate": 20,
             "affected_candidate": 20,
             "state_multiplier": 0.05
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2564,
-        "fields": {
-            "answer": 2561,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
         }
     },
     {
@@ -5381,32 +5337,10 @@ campaignTrail_temp.answer_score_state_json = [
     },
     {
         "model": "campaign_trail.answer_score_state",
-        "pk": 2644,
-        "fields": {
-            "answer": 1555,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": -0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
         "pk": 2645,
         "fields": {
             "answer": 1555,
             "state": 68,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": -0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2646,
-        "fields": {
-            "answer": 1555,
-            "state": 88,
             "candidate": 20,
             "affected_candidate": 20,
             "state_multiplier": -0.01
@@ -5436,32 +5370,10 @@ campaignTrail_temp.answer_score_state_json = [
     },
     {
         "model": "campaign_trail.answer_score_state",
-        "pk": 2650,
-        "fields": {
-            "answer": 1556,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
         "pk": 2651,
         "fields": {
             "answer": 1556,
-            "state": 73,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": 0.01
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2652,
-        "fields": {
-            "answer": 1556,
-            "state": 88,
+            "state": 68,
             "candidate": 20,
             "affected_candidate": 20,
             "state_multiplier": 0.01
@@ -5475,7 +5387,7 @@ campaignTrail_temp.answer_score_state_json = [
             "state": 54,
             "candidate": 20,
             "affected_candidate": 20,
-            "state_multiplier": 0.02
+            "state_multiplier": 0.005
         }
     },
     {
@@ -5663,28 +5575,6 @@ campaignTrail_temp.answer_score_state_json = [
             "candidate": 20,
             "affected_candidate": 20,
             "state_multiplier": 0.012
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2741,
-        "fields": {
-            "answer": 2735,
-            "state": 66,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": -0.05
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_state",
-        "pk": 2742,
-        "fields": {
-            "answer": 2735,
-            "state": 88,
-            "candidate": 20,
-            "affected_candidate": 20,
-            "state_multiplier": -0.05
         }
     },
     {
@@ -6656,37 +6546,6 @@ campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/yVOxPyA.png";
 campaignTrail_temp.candidate_last_name = "Hamlin";
 campaignTrail_temp.running_mate_last_name = "Grant";
 
-campaignTrail_temp.multiple_endings = true;
-endingPicker = (out, totv, aa, quickstats) => {
-
-    function setImage(url) {
-        if(url == '' || url == null) return;
-        let interval = setInterval(function () {
-            img = document.getElementsByClassName("person_image")[0];
-            if (img != null) {
-                img.src = url;
-                clearInterval(interval);
-            }
-        }, 50);
-    }
-
-    if(quickstats[0] > 128) {
-        setImage("");
-        return `<p>This was expected. Everyone knew you were going to win, 2 days before the election. Newspapers were already coming out predicting a Hamlin victory. Now with four more years, you are left with the responsibilities of keeping and peace and admitting more southern states. Good Luck on your first elected term, Mr. Hamlin.</p> `;
-    }
-    if(quickstats[0] == 128) {
-        setImage("");
-        return `<p>How? No one knows how this happened? But the election has been deadlocked. Now, for the first time since 1824, the House will have to choose the winner. But thankfully for you, the House and Senate are both in Republican hold. This means there is a good chance you will be elected. But until then, do not let it get to you. Good Luck, Mr. Hamlin.</p>`;
-    }
-    if(quickstats[0] < 128) {
-        setImage("");
-        return `<p>How did this happen? Everyone thought you were going to win, but you proved them wrong. Now, President Seymour serving is going to be interesting. But as for you, you could return for a second try in 4 years or go back to Maine and retire. But whatever you do is something only time will tell.</p>  `;
-    }
-    if(quickstats[0] > 256) {
-        setImage("");
-        return `<p>Not even possible.</p>`;
-    }
-}
 
 
 campaignTrail_temp.jet_data = [{
@@ -6705,7 +6564,7 @@ campaignTrail_temp.jet_data = [{
     "cyoa_data": {},
     "mapping_enabled": false,
     "mapping_data": {},
-    "endings_enabled": true,
+    "endings_enabled": false,
     "ending_data": {
         "1751152961410": {
             "id": 1751152961410,
@@ -6714,7 +6573,7 @@ campaignTrail_temp.jet_data = [{
             "value": 0,
             "endingImage": "",
             "endingText": "<p>This was expected. Everyone knew you were going to win, 2 days before the election. Newspapers were already coming out predicting a Hamlin victory. Now with four more years, you are left with the responsibilities of keeping and peace and admitting more southern states. Good Luck on your first elected term, Mr. Hamlin.</p> ",
-            "amount": "128"
+            "amount": "129"
         },
         "1751153684490": {
             "id": 1751153684490,
@@ -6731,8 +6590,8 @@ campaignTrail_temp.jet_data = [{
             "operator": "<",
             "value": 0,
             "endingImage": "",
-            "endingText": "<p>How did this happen? Everyone thought you were going to win, but you proved them wrong. Now, President Seymour serving is going to be interesting. But as for you, you could return for a second try in 4 years or go back to Maine and retire. But whatever you do is something only time will tell.</p>  ",
-            "amount": "128"
+            "endingText": "<p>How did this happen? Everyone thought you were going to win, but you proved them wrong. Now, President Seymour serving is going to be interesting. But as for you, you could return for a second try in 4 years or go back to Maine and retire. But whatever you do is something only time will tell.</p> ",
+            "amount": "129"
         },
         "1751154049131": {
             "id": 1751154049131,
